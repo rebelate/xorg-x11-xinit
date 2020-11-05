@@ -3,7 +3,7 @@
 Summary:    X.Org X11 X Window System xinit startup scripts
 Name:       xorg-x11-%{pkgname}
 Version:    1.4.0
-Release:    7%{?dist}
+Release:    8%{?dist}
 License:    MIT
 URL:        https://www.x.org
 
@@ -37,6 +37,7 @@ Patch6: xinit-1.3.4-set-XORG_RUN_AS_USER_OK.patch
 # to just BuildRequire gcc-c++ for now, so the processing is done as
 # it was before. See https://bugs.freedesktop.org/show_bug.cgi?id=107368
 # for more on this.
+BuildRequires:  make
 BuildRequires:  automake gcc gcc-c++
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  dbus-devel
@@ -118,6 +119,9 @@ install -p -m644 -D %{SOURCE18} $RPM_BUILD_ROOT%{_datadir}/xsessions/xinit-compa
 %{_datadir}/xsessions/xinit-compat.desktop
 
 %changelog
+* Thu Nov  5 11:00:56 AEST 2020 Peter Hutterer <peter.hutterer@redhat.com> - 1.4.0-8
+- Add BuildRequires for make
+
 * Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.4.0-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
