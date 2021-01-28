@@ -3,7 +3,7 @@
 Summary:    X.Org X11 X Window System xinit startup scripts
 Name:       xorg-x11-%{pkgname}
 Version:    1.4.0
-Release:    8%{?dist}
+Release:    9%{?dist}
 License:    MIT
 URL:        https://www.x.org
 
@@ -119,6 +119,9 @@ install -p -m644 -D %{SOURCE18} $RPM_BUILD_ROOT%{_datadir}/xsessions/xinit-compa
 %{_datadir}/xsessions/xinit-compat.desktop
 
 %changelog
+* Thu Jan 28 2021 Fedora Release Engineering <releng@fedoraproject.org> - 1.4.0-9
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Thu Nov  5 11:00:56 AEST 2020 Peter Hutterer <peter.hutterer@redhat.com> - 1.4.0-8
 - Add BuildRequires for make
 
