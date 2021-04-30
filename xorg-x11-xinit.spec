@@ -3,7 +3,7 @@
 Summary:    X.Org X11 X Window System xinit startup scripts
 Name:       xorg-x11-%{pkgname}
 Version:    1.4.0
-Release:    10%{?dist}
+Release:    11%{?dist}
 License:    MIT
 URL:        https://www.x.org
 
@@ -69,7 +69,7 @@ managers.
 
 %build
 %configure
-make %{?_smp_mflags}
+%make_build
 
 %install
 %make_install
@@ -119,6 +119,9 @@ install -p -m644 -D %{SOURCE18} $RPM_BUILD_ROOT%{_datadir}/xsessions/xinit-compa
 %{_datadir}/xsessions/xinit-compat.desktop
 
 %changelog
+* Fri Apr 30 2021 Rex Dieter <rdieter@fedoraproject.org> - 1.4.0-11
+- use %%make_build
+
 * Thu Apr 29 2021 Neal Gompa <ngompa13@gmail.com> - 1.4.0-10
 - Use correct binary for the KDE Plasma session (#1954847)
 
