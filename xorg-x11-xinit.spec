@@ -3,7 +3,7 @@
 Summary:    X.Org X11 X Window System xinit startup scripts
 Name:       xorg-x11-%{pkgname}
 Version:    1.4.0
-Release:    12%{?dist}
+Release:    12%{?dist}.arsil
 License:    MIT
 URL:        https://www.x.org
 
@@ -25,7 +25,7 @@ Patch1: xinit-1.0.2-client-session.patch
 Patch5: 0003-startx-Make-startx-auto-display-select-work-with-per.patch
 # Fedora specific patch to match the similar patch in the xserver
 Patch6: xinit-1.3.4-set-XORG_RUN_AS_USER_OK.patch
-
+Patch7: xinit-1.4.0-remove-unset-DBUS_SESSION_BUS_ADDRESS.patch
 # The build process uses cpp (the C preprocessor) to do some text
 # processing on several files that are not C or C++. However, these
 # files have '.cpp' extensions, which causes cpp to preprocess them
@@ -66,6 +66,7 @@ managers.
 %patch1 -p1
 %patch5 -p1
 %patch6 -p1
+%patch7 -p1
 
 %build
 %configure
